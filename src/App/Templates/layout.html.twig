@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>{% block title %}Sans titre{% endblock %}</title>
+</head>
+<body>
+
+    <style>
+        @import url("https://use.typekit.net/mcj5nkc.css");
+
+        body {
+            background-color: #131418;
+            font-family: Helvetica;
+        }
+        .white{color:#D5D7DE;}
+        .green{color:#58d19f;}
+
+        .pulpo{font-family: pulpo-rust-50, serif;font-weight: 400;font-style: normal;}
+
+        h1{
+            font-size: 4em;
+        }
+
+        a{
+            color: #131418;
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: #131418;
+        }
+
+        .content{
+            margin: 20px 150px 20px 150px;
+            padding: 20px 50px 20px 50px;
+        }
+        .card{
+            width: 450px;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background-color: rgba(0,0,0,0);
+        }
+
+        .meme-link .thumbnail{
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 300px;
+            width: 450px;
+            content: " ";
+            box-shadow: 35px 35px 0px #58d19f;
+            background-color:#1F222A;
+            border-radius: 10px;
+        }
+
+        .meme-link:hover{
+            transform: scale(1.05, 1.05);
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand pulpo" href="home">MemeSharrr</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="pulpo navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="list-meme">Listes des mêmes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% block body %}{% endblock %}
+
+<!-- Optional JavaScript; choose one of the two! -->
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</body>
+</html>

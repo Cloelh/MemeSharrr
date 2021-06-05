@@ -2,6 +2,7 @@
 
 namespace App\Aware;
 
+use App\Repository\MemeRepository;
 use PDO;
 use Symfony\Component\HttpFoundation\Request;
 use Twig\Environment;
@@ -14,6 +15,8 @@ class AwareManager
     private ?PDO $databaseConnection = null;
 
     private ?Environment $templateEngine = null;
+
+    private ?MemeRepository $memeRepository = null;
 
     public function __construct(Request $request)
     {
@@ -44,6 +47,15 @@ class AwareManager
             }
 
             $object->provideTemplateEngine($this->templateEngine);
+        }
+
+        if ($object instanceof MemeRepositoryAware) {
+            if (!$this->memeRepository) {
+                $this->memeRepository = new MemeRepository();
+                $this->injectDependencies($this->memeRepository);
+            }
+
+            $object->provideMemeRepository($this->memeRepository);
         }
 
     }
