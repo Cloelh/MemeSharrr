@@ -16,7 +16,9 @@
                 <div>
                     <h3 class="green pulpo">Commentaires</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
+                        {% for comment in comments %}
+                            <li class="list-group-item"><b class="uppercase pulpo">{{ comment.author }}</b> : {{ comment.comment }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

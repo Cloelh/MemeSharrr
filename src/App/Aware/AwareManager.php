@@ -2,6 +2,7 @@
 
 namespace App\Aware;
 
+use App\Repository\CommentRepository;
 use App\Repository\MemeRepository;
 use PDO;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +18,8 @@ class AwareManager
     private ?Environment $templateEngine = null;
 
     private ?MemeRepository $memeRepository = null;
+
+    private ?CommentRepository $commentRepository = null;
 
     public function __construct(Request $request)
     {
@@ -56,6 +59,15 @@ class AwareManager
             }
 
             $object->provideMemeRepository($this->memeRepository);
+        }
+
+        if ($object instanceof CommentRepositoryAware) {
+            if (!$this->commentRepository) {
+                $this->commentRepository = new CommentRepository();
+                $this->injectDependencies($this->commentRepository);
+            }
+
+            $object->provideCommentRepository($this->commentRepository);
         }
 
     }
