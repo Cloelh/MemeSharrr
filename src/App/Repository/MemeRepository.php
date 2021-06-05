@@ -35,4 +35,16 @@ class MemeRepository implements DatabaseConnectionAware
         }
         return $memes;
     }
+
+    public function findById($id): array
+    {
+        $query = $this->database->prepare('SELECT * FROM `meme` WHERE `id`=:id');
+        $query->execute([
+            'id' => $id
+        ]);
+
+        $meme = $query->fetch();
+
+        return $meme;
+    }
 }
