@@ -10,6 +10,8 @@ class Meme
 
     private ?string $author = null;
 
+    public function __construct(){}
+
     static public function createFromData(array $data): Meme {
         $meme = new Meme();
 

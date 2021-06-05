@@ -15,11 +15,23 @@
                 </div>
                 <div>
                     <h3 class="green pulpo">Commentaires</h3>
-                    <ul class="list-group">
+                    <ul class="list-group comment">
                         {% for comment in comments %}
-                            <li class="list-group-item"><b class="uppercase pulpo">{{ comment.author }}</b> : {{ comment.comment }}</li>
+                            <li class="green border-none list-group-item"><b class="uppercase pulpo">{{ comment.author }}</b> : {{ comment.comment }}</li>
                         {% endfor %}
                     </ul>
+                    <div class="form-add-comment">
+                        <h5 class="green pulpo">Ajouter une commentaire</h5>
+                        <form action="view?id={{ meme.id }}" method="post">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="author" name="author" placeholder="auteur">
+                            </div>
+                            <div class="mb-3">
+                                <textarea type="text" class="form-control" id="comment" name="comment" placeholder="commenter le meme"></textarea>
+                            </div>
+                            <button id="addComment" name="addComment" type="submit" class="btn btn-primary">Envoyer</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

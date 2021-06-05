@@ -38,6 +38,10 @@
         }
 
         .list-group-item{text-align: left}
+        .list-group li{
+            background: transparent;
+            border: #58d19f 1px solid ;
+        }
 
         a:hover{
             color: #131418;
@@ -87,21 +91,34 @@
         .meme-link:hover{
             transform: scale(1.05, 1.05);
         }
+
+        .comment{
+            height: 300px;
+            overflow-y: scroll;
+            scrollbar-color: rebeccapurple green;
+            scrollbar-width: thin;
+        }
+
+        .form-add-comment{
+            border: #58d19f 1px solid ;
+            padding: 10px;
+            margin-top: 20px;
+        }
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand pulpo" href="home">MemeSharrr</a>
+            <a class="navbar-brand pulpo" href="/MemeSharrr/home">MemeSharrr</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="pulpo navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="home">Accueil</a>
+                        <a class="nav-link" href="/MemeSharrr/home">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="list-meme">Listes des mêmes</a>
+                        <a class="nav-link" href="/MemeSharrr/list-meme">Listes des mêmes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin">Admin</a>
+                        <a class="nav-link" href="/MemeSharrr/admin">Admin</a>
                     </li>
                 </ul>
             </div>

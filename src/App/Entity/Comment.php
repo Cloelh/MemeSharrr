@@ -3,9 +3,6 @@
 
 namespace App\Entity;
 
-
-use JetBrains\PhpStorm\Pure;
-
 class Comment
 {
     private ?int $id = null;
@@ -16,8 +13,18 @@ class Comment
 
     private ?int $id_meme = null;
 
+    public function __construct(?string $author, ?string $comment, ?int $id_meme){
+        $this->author = $author;
+        $this->comment = $comment;
+        $this->id_meme = $id_meme;
+    }
+
     static public function createFromData(array $data): Comment {
-        $comment = new Comment();
+        $comment = new Comment(
+            $data['author'],
+            $data['comment'],
+            intval($data['id_meme']),
+        );
 
         $fieldsMap = [
             'id' => 'id',

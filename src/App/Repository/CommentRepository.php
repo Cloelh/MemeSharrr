@@ -27,12 +27,12 @@ class CommentRepository implements DatabaseConnectionAware
         return $comments;
     }
 
-    public function addComment(string $comment, string $author, int $idMeme){
+    public function addComment(Comment $comment){
         $query = $this->database->prepare("INSERT INTO comment(comment, author, id_meme) VALUES(:comment, :author, :idMeme)");
         $query->execute([
-            'comment'   => $comment,
-            'author'    => $author,
-            'idMeme'   => $idMeme,
+            'comment'   => $comment->getComment(),
+            'author'    => $comment->getAuthor(),
+            'idMeme'    => $comment->getIdMeme(),
         ]);
     }
 
