@@ -47,4 +47,14 @@ class MemeRepository implements DatabaseConnectionAware
 
         return $meme;
     }
+
+    public function addMeme(Meme $meme){
+        var_dump($meme->getImg() . PHP_EOL);
+        var_dump($meme->getAuthor() . PHP_EOL);
+        $query = $this->database->prepare("INSERT INTO meme(img, author) VALUES(:img, :author)");
+        $query->execute([
+            'img'   => $meme->getImg(),
+            'author'    => $meme->getAuthor()
+        ]);
+    }
 }

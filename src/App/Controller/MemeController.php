@@ -57,4 +57,21 @@ class MemeController implements TemplateEngineAware, RequestAware, MemeRepositor
             ]
         ));
     }
+
+    public function shareMeme(): Response
+    {
+        if ($this->request->request->has('addMeme')){
+            $author = $this->request->request->get('author');
+            $image = $this->request->request->get('image');
+
+            $meme = new Meme($author, $image);
+
+            $this->memeRepository->addMeme($meme);
+        }
+
+
+        return new Response($this->templateEngine->render(
+            'Meme\share-meme.html.twig'
+        ));
+    }
 }

@@ -52,7 +52,7 @@
             padding: 20px 50px 20px 50px;
         }
         .card{
-            width: 450px;
+            width: 400px;
             margin: 0;
             padding: 0;
             border: none;
@@ -81,7 +81,7 @@
             background-position: center;
             background-repeat: no-repeat;
             height: 300px;
-            width: 450px;
+            width: 400px;
             content: " ";
             box-shadow: 35px 35px 0px #58d19f;
             background-color:#1F222A;
@@ -99,11 +99,25 @@
             scrollbar-width: thin;
         }
 
+        .addMeme{
+            border: #58d19f 1px solid ;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
         .form-add-comment{
             border: #58d19f 1px solid ;
             padding: 10px;
             margin-top: 20px;
         }
+
+        button{
+            background-color: #58d19f !important;
+            border: none !important;
+            font-family: pulpo-rust-50, serif;font-weight: 400;font-style: normal;
+            color: black !important;
+        }
+
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -116,6 +130,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/MemeSharrr/list-meme">Listes des mêmes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/MemeSharrr/share">Ajouter son meme</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/MemeSharrr/admin">Admin</a>

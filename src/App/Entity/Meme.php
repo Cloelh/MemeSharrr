@@ -10,10 +10,16 @@ class Meme
 
     private ?string $author = null;
 
-    public function __construct(){}
+    public function __construct(?string $author, ?string $img){
+        $this->img = $img;
+        $this->author = $author;
+    }
 
     static public function createFromData(array $data): Meme {
-        $meme = new Meme();
+        $meme = new Meme(
+            $data['img'],
+            $data['author'],
+        );
 
         $fieldsMap = [
             'id' => 'id',

@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Partager son meme {% endblock %}
+{% block body %}
+    <div class="content text-center">
+        <h1 class="green pulpo">Partage ton meme</h1>
+        <div class="d-flex w-100 justify-content-center align-items-center">
+            <form class="addMeme col-6" action="/MemeSharrr/share" method="post">
+                <div class="my-5">
+                    <input type="text" class="form-control" id="author" name="author" placeholder="auteur">
+                </div>
+                <div class="my-5">
+                    <textarea type="text" class="form-control" id="image" name="image" placeholder="copier le lien du meme ici"></textarea>
+                </div>
+                <button id="addMeme" name="addMeme" type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

@@ -19,6 +19,10 @@ $routes = [
     '/list-memes/view' => [
         \App\Controller\MemeController::class,
         'singleMeme'
+    ],
+    '/share' => [
+        \App\Controller\MemeController::class,
+        'shareMeme'
     ]
 ];
 
