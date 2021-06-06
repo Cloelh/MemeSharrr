@@ -41,7 +41,7 @@ class MemeController implements TemplateEngineAware, RequestAware, MemeRepositor
             && !empty($this->request->request->has('comment'))
             && !empty($this->request->request->has('author'))
         ){
-            $comment = new Comment($this->request->request->get('comment'), $this->request->request->get('author'), $idMeme);
+            $comment = new Comment($this->request->request->get('author'), $this->request->request->get('comment'), $idMeme);
             $this->commentRepository->addComment($comment);
         }
 
