@@ -69,6 +69,5 @@ class AwareManager
 
             $object->provideCommentRepository($this->commentRepository);
         }
-
     }
 }
